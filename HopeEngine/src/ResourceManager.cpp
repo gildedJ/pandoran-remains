@@ -1,5 +1,3 @@
-#include "pch.h"
-
 #include "ResourceManager.h"
 
 #include <iostream>
@@ -26,12 +24,15 @@ Shader& ResourceManager::GetShader(std::string name)
 
 Texture2D ResourceManager::LoadTexture(const GLchar *file, GLboolean alpha, std::string name)
 {
+	//std::cout << "Loading Texture " << name << std::endl;
 	Textures[name] = loadTextureFromFile(file, alpha);
 	return Textures[name];
 }
 
 Texture2D& ResourceManager::GetTexture(std::string name)
 {
+	//std::cout << "Requesting Texture " << name << std::endl;
+	//std::cout << "Returning " << Textures[name].ID << std::endl;
 	return Textures[name];
 }
 

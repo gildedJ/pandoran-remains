@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -17,6 +17,81 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Components\BallComponent.h" />
+    <ClInclude Include="src\Components\BoxColliderComponent.h" />
+    <ClInclude Include="src\Components\CircleColliderComponent.h" />
+    <ClInclude Include="src\Components\HealthComponent.h" />
+    <ClInclude Include="src\Components\MovementComponent.h" />
+    <ClInclude Include="src\Components\PositionComponent.h" />
+    <ClInclude Include="src\Components\SpriteComponent.h" />
+    <ClInclude Include="src\Components\Tags.h" />
+    <ClInclude Include="src\Entity\Archetypes\Ball.h" />
+    <ClInclude Include="src\Entity\Archetypes\Block.h" />
+    <ClInclude Include="src\Entity\Archetypes\Player.h" />
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\GameLevel.h" />
+    <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\Renderer\Shader.h" />
+    <ClInclude Include="src\Renderer\Texture.h" />
+    <ClInclude Include="src\ResourceManager.h" />
+    <ClInclude Include="src\Systems\CollisionRenderSystem.h" />
+    <ClInclude Include="src\Systems\MovementSystem.h" />
+    <ClInclude Include="src\Systems\SpriteRenderSystem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\GameLevel.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\pch.cpp" />
+    <ClCompile Include="src\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Renderer\Texture.cpp" />
+    <ClCompile Include="src\ResourceManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="assets\audio\bleep.mp3" />
+    <Media Include="assets\audio\bleep.wav" />
+    <Media Include="assets\audio\breakout.mp3" />
+    <Media Include="assets\audio\powerup.wav" />
+    <Media Include="assets\audio\solid.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\arial.ttf" />
+    <Font Include="assets\fonts\arialbd.ttf" />
+    <Font Include="assets\fonts\arialbi.ttf" />
+    <Font Include="assets\fonts\ariali.ttf" />
+    <Font Include="assets\fonts\ariblk.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\levels\01.lvl" />
+    <None Include="assets\levels\02.lvl" />
+    <None Include="assets\levels\03.lvl" />
+    <None Include="assets\levels\04.lvl" />
+    <None Include="assets\shaders\particle.frag" />
+    <None Include="assets\shaders\particle.vert" />
+    <None Include="assets\shaders\post_processing.frag" />
+    <None Include="assets\shaders\post_processing.vert" />
+    <None Include="assets\shaders\sprite.frag" />
+    <None Include="assets\shaders\sprite.vert" />
+    <None Include="assets\shaders\text.frag" />
+    <None Include="assets\shaders\text.vert" />
+    <None Include="assets\shaders\wireframe.frag" />
+    <None Include="assets\shaders\wireframe.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\awesomeface.png" />
+    <Image Include="assets\textures\background.jpg" />
+    <Image Include="assets\textures\block.png" />
+    <Image Include="assets\textures\block_solid.png" />
+    <Image Include="assets\textures\paddle.png" />
+    <Image Include="assets\textures\particle.png" />
+    <Image Include="assets\textures\powerup_chaos.png" />
+    <Image Include="assets\textures\powerup_confuse.png" />
+    <Image Include="assets\textures\powerup_increase.png" />
+    <Image Include="assets\textures\powerup_passthrough.png" />
+    <Image Include="assets\textures\powerup_speed.png" />
+    <Image Include="assets\textures\powerup_sticky.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -85,42 +160,44 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Library Files\EntityPlus;$(SolutionDir)Library Files\freetype\include;$(SolutionDir)Library Files\irrKlang\include;$(SolutionDir)Library Files\SOIL2\include;$(SolutionDir)Library Files\GLM;$(SolutionDir)Library Files\GLFW\include;$(SolutionDir)Library Files\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Library Files\EntityX\;$(SolutionDir)Library Files\freetype\include;$(SolutionDir)Library Files\irrKlang\include;$(SolutionDir)Library Files\SOIL2\include;$(SolutionDir)Library Files\GLM;$(SolutionDir)Library Files\GLFW\include;$(SolutionDir)Library Files\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Library Files\freetype\objs\Win32\Debug;$(SolutionDir)Library Files\irrKlang\lib\Win32-visualStudio;$(SolutionDir)Library Files\SOIL2\lib;$(SolutionDir)Library Files\GLEW\lib\Release\Win32;$(SolutionDir)Library Files\GLFW\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;soil2-debug.lib;irrKlang.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Library Files\EntityX\build\Debug;$(SolutionDir)Library Files\freetype\objs\Win32\Debug;$(SolutionDir)Library Files\irrKlang\lib\Win32-visualStudio;$(SolutionDir)Library Files\SOIL2\lib;$(SolutionDir)Library Files\GLEW\lib\Release\Win32;$(SolutionDir)Library Files\GLFW\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;soil2-debug.lib;irrKlang.lib;freetype.lib;entityx-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>libcmt;msvcrt;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Library Files\EntityPlus;$(SolutionDir)Library Files\freetype\include;$(SolutionDir)Library Files\irrKlang\include;$(SolutionDir)Library Files\SOIL2\include;$(SolutionDir)Library Files\GLM;$(SolutionDir)Library Files\GLFW\include;$(SolutionDir)Library Files\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Library Files\EntityX\;$(SolutionDir)Library Files\freetype\include;$(SolutionDir)Library Files\irrKlang\include;$(SolutionDir)Library Files\SOIL2\include;$(SolutionDir)Library Files\GLM;$(SolutionDir)Library Files\GLFW\include;$(SolutionDir)Library Files\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Library Files\freetype\objs\Win32\Debug;$(SolutionDir)Library Files\irrKlang\lib\Win32-visualStudio;$(SolutionDir)Library Files\SOIL2\lib;$(SolutionDir)Library Files\GLEW\lib\Release\Win32;$(SolutionDir)Library Files\GLFW\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;soil2-debug.lib;irrKlang.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Library Files\EntityX\build\Debug;$(SolutionDir)Library Files\freetype\objs\Win32\Debug;$(SolutionDir)Library Files\irrKlang\lib\Win32-visualStudio;$(SolutionDir)Library Files\SOIL2\lib;$(SolutionDir)Library Files\GLEW\lib\Release\Win32;$(SolutionDir)Library Files\GLFW\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;soil2-debug.lib;irrKlang.lib;freetype.lib;entityx-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>libcmt;msvcrt;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
@@ -169,77 +246,6 @@
       <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;soil2-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="BallObject.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="GameLevel.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="ParticleGenerator.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="PostProcessor.h" />
-    <ClInclude Include="PowerUp.h" />
-    <ClInclude Include="ResourceManager.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="SpriteRenderer.h" />
-    <ClInclude Include="TextRenderer.h" />
-    <ClInclude Include="Texture.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="BallObject.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameLevel.cpp" />
-    <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="ParticleGenerator.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="PostProcessor.cpp" />
-    <ClCompile Include="ResourceManager.cpp" />
-    <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="SpriteRenderer.cpp" />
-    <ClCompile Include="TextRenderer.cpp" />
-    <ClCompile Include="Texture.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="levels\01.lvl" />
-    <None Include="levels\02.lvl" />
-    <None Include="levels\03.lvl" />
-    <None Include="levels\04.lvl" />
-    <None Include="shaders\particle.frag" />
-    <None Include="shaders\particle.vert" />
-    <None Include="shaders\post_processing.frag" />
-    <None Include="shaders\post_processing.vert" />
-    <None Include="shaders\sprite.frag" />
-    <None Include="shaders\sprite.vert" />
-    <None Include="shaders\text.frag" />
-    <None Include="shaders\text.vert" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="textures\awesomeface.png" />
-    <Image Include="textures\background.jpg" />
-    <Image Include="textures\block.png" />
-    <Image Include="textures\block_solid.png" />
-    <Image Include="textures\paddle.png" />
-    <Image Include="textures\particle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="audio\bleep.mp3" />
-    <Media Include="audio\bleep.wav" />
-    <Media Include="audio\breakout.mp3" />
-    <Media Include="audio\powerup.wav" />
-    <Media Include="audio\solid.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="fonts\arial.ttf" />
-    <Font Include="fonts\arialbd.ttf" />
-    <Font Include="fonts\arialbi.ttf" />
-    <Font Include="fonts\ariali.ttf" />
-    <Font Include="fonts\ariblk.ttf" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -5,8 +5,8 @@
 
 #include <GL/glew.h>
 
-#include "texture.h"
-#include "shader.h"
+#include "Renderer/Texture.h"
+#include "Renderer/Shader.h"
 
 
 // A static singleton ResourceManager class that hosts several

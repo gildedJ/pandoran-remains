@@ -5,10 +5,9 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-#include "entity.h"
-#include "GameObject.h"
+#include <entityx/entityx.h>
+
 #include "GameLevel.h"
-#include "PowerUp.h"
 
 // Represents the current state of the game
 enum GameState {
@@ -27,29 +26,19 @@ enum Direction {
 // Defines a Collision typedef that represents collision data
 typedef std::tuple<GLboolean, Direction, glm::vec2> Collision; // <collision?, what direction?, difference vector center - closest point>
 
-// Initial size of the player paddle
-const glm::vec2 PLAYER_SIZE(100, 20);
-// Initial velocity of the player paddle
-const GLfloat PLAYER_VELOCITY(500.0f);
-// Initial velocity of the Ball
-const glm::vec2 INITIAL_BALL_VELOCITY(100.0f, -350.0f);
-// Radius of the ball object
-const GLfloat BALL_RADIUS = 12.5f;
-
 // Game holds all game-related state and functionality.
 // Combines all game-related data into a single class for
 // easy access to each of the components and manageability.
-class Game
+class Game : public EntityX
 {
 public:
 	// Game state
 	GameState              State;
-	entity_manager_t	   EntityManager;
 	GLboolean              Keys[1024];
 	GLboolean              KeysProcessed[1024];
 	GLuint                 Width, Height;
 	std::vector<GameLevel> Levels;
-	std::vector<PowerUp>   PowerUps;
+	//std::vector<PowerUp>   PowerUps;
 	GLuint                 Level;
 	GLuint                 Lives;
 	GLfloat				   FPS;
@@ -62,11 +51,11 @@ public:
 	void ProcessInput(GLfloat dt);
 	void Update(GLfloat dt);
 	void Render();
-	void DoCollisions();
+	//void DoCollisions();
 	// Reset
-	void ResetLevel();
-	void ResetPlayer();
+	//void ResetLevel();
+	//void ResetPlayer();
 	// Powerups
-	void SpawnPowerUps(GameObject &block);
-	void UpdatePowerUps(GLfloat dt);
+	//void SpawnPowerUps(GameObject &block);
+	//void UpdatePowerUps(GLfloat dt);
 };

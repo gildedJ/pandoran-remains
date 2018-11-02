@@ -1,206 +1,246 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Components">
+      <UniqueIdentifier>{4759ad5e-f4b0-4302-b672-c5a1a2652646}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Entity">
+      <UniqueIdentifier>{4edc47df-b694-4038-8994-88d024c623af}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
+    <Filter Include="Entity\Archetypes">
+      <UniqueIdentifier>{c0f4a635-994b-4942-8dba-2fad275737d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{050e46ab-4cdc-4f1d-8470-7cb5b0278d43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{e20d127e-055d-46e9-8fc0-be9dc4f76b02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{cab88ad6-fd59-4560-bdc8-0254e7f061b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers">
+      <UniqueIdentifier>{4d72ad17-798f-49a1-897a-8f7896e8110b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Resource Files\Shaders">
+    <Filter Include="Assets\Shaders">
       <UniqueIdentifier>{33d302dd-300b-4d2f-af57-820e29a8f0e2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Textures">
+    <Filter Include="Assets\Textures">
       <UniqueIdentifier>{77e00b2b-95b5-483a-a930-1ad344c624cb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Levels">
+    <Filter Include="Assets\Levels">
       <UniqueIdentifier>{ce02e095-e292-4329-bada-0b4aa88e20f3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Audio">
+    <Filter Include="Assets\Audio">
       <UniqueIdentifier>{2c03bbf4-099f-4e8b-931e-e5bbc4758597}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Fonts">
+    <Filter Include="Assets\Fonts">
       <UniqueIdentifier>{a4059e95-9a2e-4793-8460-baa65dd25741}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Components\BallComponent.h">
+      <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Components\BoxColliderComponent.h">
+      <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Components\CircleColliderComponent.h">
+      <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Components\HealthComponent.h">
+      <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Components\MovementComponent.h">
+      <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteRenderer.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Components\PositionComponent.h">
+      <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Components\SpriteComponent.h">
+      <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="GameLevel.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Components\Tags.h">
+      <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="BallObject.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Entity\Archetypes\Ball.h">
+      <Filter>Entity\Archetypes</Filter>
     </ClInclude>
-    <ClInclude Include="ParticleGenerator.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Renderer\Shader.h">
+      <Filter>Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="PostProcessor.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Renderer\Texture.h">
+      <Filter>Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="PowerUp.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Game.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="TextRenderer.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\GameLevel.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pch.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ResourceManager.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Archetypes\Block.h">
+      <Filter>Entity\Archetypes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Archetypes\Player.h">
+      <Filter>Entity\Archetypes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Systems\SpriteRenderSystem.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Systems\MovementSystem.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Systems\CollisionRenderSystem.h">
+      <Filter>Systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Renderer\Shader.cpp">
+      <Filter>Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Renderer\Texture.cpp">
+      <Filter>Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Game.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\GameLevel.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceManager.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\pch.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameLevel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BallObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ParticleGenerator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PostProcessor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TextRenderer.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\ResourceManager.cpp">
+      <Filter>Managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shaders\sprite.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="shaders\sprite.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="levels\01.lvl">
-      <Filter>Resource Files\Levels</Filter>
-    </None>
-    <None Include="levels\02.lvl">
-      <Filter>Resource Files\Levels</Filter>
-    </None>
-    <None Include="levels\03.lvl">
-      <Filter>Resource Files\Levels</Filter>
-    </None>
-    <None Include="levels\04.lvl">
-      <Filter>Resource Files\Levels</Filter>
-    </None>
-    <None Include="shaders\particle.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="shaders\particle.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="shaders\post_processing.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="shaders\post_processing.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="shaders\text.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="shaders\text.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="textures\awesomeface.png">
-      <Filter>Resource Files\Textures</Filter>
-    </Image>
-    <Image Include="textures\background.jpg">
-      <Filter>Resource Files\Textures</Filter>
-    </Image>
-    <Image Include="textures\block.png">
-      <Filter>Resource Files\Textures</Filter>
-    </Image>
-    <Image Include="textures\block_solid.png">
-      <Filter>Resource Files\Textures</Filter>
-    </Image>
-    <Image Include="textures\paddle.png">
-      <Filter>Resource Files\Textures</Filter>
-    </Image>
-    <Image Include="textures\particle.png">
-      <Filter>Resource Files\Textures</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="audio\breakout.mp3">
-      <Filter>Resource Files\Audio</Filter>
+    <Media Include="assets\audio\bleep.mp3">
+      <Filter>Assets\Audio</Filter>
     </Media>
-    <Media Include="audio\bleep.mp3">
-      <Filter>Resource Files\Audio</Filter>
+    <Media Include="assets\audio\bleep.wav">
+      <Filter>Assets\Audio</Filter>
     </Media>
-    <Media Include="audio\bleep.wav">
-      <Filter>Resource Files\Audio</Filter>
+    <Media Include="assets\audio\breakout.mp3">
+      <Filter>Assets\Audio</Filter>
     </Media>
-    <Media Include="audio\powerup.wav">
-      <Filter>Resource Files\Audio</Filter>
+    <Media Include="assets\audio\powerup.wav">
+      <Filter>Assets\Audio</Filter>
     </Media>
-    <Media Include="audio\solid.wav">
-      <Filter>Resource Files\Audio</Filter>
+    <Media Include="assets\audio\solid.wav">
+      <Filter>Assets\Audio</Filter>
     </Media>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="fonts\arial.ttf">
-      <Filter>Resource Files\Fonts</Filter>
+    <Font Include="assets\fonts\arial.ttf">
+      <Filter>Assets\Fonts</Filter>
     </Font>
-    <Font Include="fonts\arialbd.ttf">
-      <Filter>Resource Files\Fonts</Filter>
+    <Font Include="assets\fonts\arialbd.ttf">
+      <Filter>Assets\Fonts</Filter>
     </Font>
-    <Font Include="fonts\arialbi.ttf">
-      <Filter>Resource Files\Fonts</Filter>
+    <Font Include="assets\fonts\arialbi.ttf">
+      <Filter>Assets\Fonts</Filter>
     </Font>
-    <Font Include="fonts\ariali.ttf">
-      <Filter>Resource Files\Fonts</Filter>
+    <Font Include="assets\fonts\ariali.ttf">
+      <Filter>Assets\Fonts</Filter>
     </Font>
-    <Font Include="fonts\ariblk.ttf">
-      <Filter>Resource Files\Fonts</Filter>
+    <Font Include="assets\fonts\ariblk.ttf">
+      <Filter>Assets\Fonts</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\levels\01.lvl">
+      <Filter>Assets\Levels</Filter>
+    </None>
+    <None Include="assets\levels\02.lvl">
+      <Filter>Assets\Levels</Filter>
+    </None>
+    <None Include="assets\levels\03.lvl">
+      <Filter>Assets\Levels</Filter>
+    </None>
+    <None Include="assets\levels\04.lvl">
+      <Filter>Assets\Levels</Filter>
+    </None>
+    <None Include="assets\shaders\particle.frag">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="assets\shaders\particle.vert">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="assets\shaders\post_processing.frag">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="assets\shaders\post_processing.vert">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="assets\shaders\sprite.frag">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="assets\shaders\sprite.vert">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="assets\shaders\text.frag">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="assets\shaders\text.vert">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="assets\shaders\wireframe.frag">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="assets\shaders\wireframe.vert">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\awesomeface.png">
+      <Filter>Assets\Textures</Filter>
+    </Image>
+    <Image Include="assets\textures\background.jpg">
+      <Filter>Assets\Textures</Filter>
+    </Image>
+    <Image Include="assets\textures\block.png">
+      <Filter>Assets\Textures</Filter>
+    </Image>
+    <Image Include="assets\textures\block_solid.png">
+      <Filter>Assets\Textures</Filter>
+    </Image>
+    <Image Include="assets\textures\paddle.png">
+      <Filter>Assets\Textures</Filter>
+    </Image>
+    <Image Include="assets\textures\particle.png">
+      <Filter>Assets\Textures</Filter>
+    </Image>
+    <Image Include="assets\textures\powerup_chaos.png">
+      <Filter>Assets\Textures</Filter>
+    </Image>
+    <Image Include="assets\textures\powerup_confuse.png">
+      <Filter>Assets\Textures</Filter>
+    </Image>
+    <Image Include="assets\textures\powerup_increase.png">
+      <Filter>Assets\Textures</Filter>
+    </Image>
+    <Image Include="assets\textures\powerup_passthrough.png">
+      <Filter>Assets\Textures</Filter>
+    </Image>
+    <Image Include="assets\textures\powerup_speed.png">
+      <Filter>Assets\Textures</Filter>
+    </Image>
+    <Image Include="assets\textures\powerup_sticky.png">
+      <Filter>Assets\Textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>
